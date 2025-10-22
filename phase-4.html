@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 4: $5M Valley of Death Navigation - MSP Revenue Scaling Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .phase-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .action-card { transition: all 0.3s ease; }
+        .action-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .warning-card { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .success-card { background: linear-gradient(135deg, #10b981, #059669); }
+        .checklist-item { transition: all 0.3s ease; }
+        .checklist-item.completed { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .timeline-item { position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; }
+        .timeline-item:last-child::before { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='phase-3.html'" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800">Phase 4: Valley of Death Navigation</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Pages 11-13 of 18</span>
+                    <button onclick="window.location.href='phase-5.html'" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+                        Next Phase <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Phase Header -->
+    <div class="phase-header py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <span class="text-white font-medium">Phase 4: ~$5M Plateau</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Valley of Death Navigation
+            </h1>
+            <p class="text-xl text-red-100 max-w-3xl mx-auto">
+                Most MSPs plateau or decline 12-24 months after $5M due to infrastructure, finance, and team gaps
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Reality Check -->
+        <div class="warning-card rounded-xl p-8 text-white mb-12">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-exclamation-triangle text-3xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">The $5M Reality</h2>
+                    <p class="text-lg leading-relaxed">
+                        The $5M mark is where most MSPs hit a wall. Systems that worked at $3M break down. 
+                        Cash flow gets tight. Quality suffers. The founder gets pulled back into daily operations. 
+                        This phase requires immediate triage and systematic stabilization.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 30-Day Triage -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-ambulance text-red-600 mr-3"></i>
+                First 30-Day Triage
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Finance Triage -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-red-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Finance</h3>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Emergency billing audit</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Tighten payment terms immediately</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">AR automation go-live</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Price reset on underpriced services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capacity Triage -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-users text-orange-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Capacity</h3>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Headcount plan tied to pipeline</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Freeze non-critical hires</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Utilization analysis and optimization</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Resource reallocation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality Triage -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-award text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Quality</h3>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Implement quality gates</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Problem management process</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Post-incident reviews</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-sm">Enforce ICP strictly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 90-Day Stabilization -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-calendar-alt text-teal-600 mr-3"></i>
+                90-Day Stabilization Plan
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="timeline-item flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1-2</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-gray-800 text-lg">Weeks 1-2: Cash & Pricing Actions</h3>
+                        <p class="text-gray-600 mb-2">Emergency billing audit, price increases issued, AR automation live</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Billing Audit</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Price Reset</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">AR Live</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">3-6</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-gray-800 text-lg">Weeks 3-6: Org & Quality Adjustments</h3>
+                        <p class="text-gray-600 mb-2">Organizational structure changes, SLOs implementation, capacity rhythm establishment</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Org Chart</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">SLOs</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Capacity Plan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">7-12</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-gray-800 text-lg">Weeks 7-12: Growth Recovery</h3>
+                        <p class="text-gray-600 mb-2">AM expansion initiatives, project recovery, weekly margin tracking implementation</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">AM Pipeline</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Project Recovery</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Margin Tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Watch List -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-eye text-teal-600 mr-3"></i>
+                Weekly Watch List
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-red-50 rounded-lg p-6 border border-red-200">
+                    <h3 class="font-bold text-red-800 mb-4 flex items-center">
+                        <i class="fas fa-coins mr-2"></i>
+                        Cash Metrics
+                    </h3>
+                    <ul class="space-y-2 text-red-700 text-sm">
+                        <li>• Runway months</li>
+                        <li>• DSO trend</li>
+                        <li>• Unbilled WIP</li>
+                        <li>• Cash collections</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                    <h3 class="font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        Performance
+                    </h3>
+                    <ul class="space-y-2 text-blue-700 text-sm">
+                        <li>• GM by service</li>
+                        <li>• Utilization %</li>
+                        <li>• SLA attainment</li>
+                        <li>• Ticket volume</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-lg p-6 border border-yellow-200">
+                    <h3 class="font-bold text-yellow-800 mb-4 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Risk Indicators
+                    </h3>
+                    <ul class="space-y-2 text-yellow-700 text-sm">
+                        <li>• Client churn risk</li>
+                        <li>• Key client health</li>
+                        <li>• Employee turnover</li>
+                        <li>• Project overruns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- What Breaks at $5M -->
+        <div class="bg-red-50 border border-red-200 rounded-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-red-800 mb-8 flex items-center">
+                <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                What Typically Breaks at $5M
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4 border border-red-200">
+                        <h3 class="font-bold text-red-800 mb-2">Manual AR Processes</h3>
+                        <p class="text-red-700 text-sm">Billing complexity overwhelms manual systems, creating cash flow crises</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 border border-red-200">
+                        <h3 class="font-bold text-red-800 mb-2">Weak Account Management</h3>
+                        <p class="text-red-700 text-sm">No systematic expansion leads to stagnant revenue growth</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4 border border-red-200">
+                        <h3 class="font-bold text-red-800 mb-2">Founder Escalations</h3>
+                        <p class="text-red-700 text-sm">Founder gets pulled back into daily operations and firefighting</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 border border-red-200">
+                        <h3 class="font-bold text-red-800 mb-2">Role Ambiguity</h3>
+                        <p class="text-red-700 text-sm">Unclear responsibilities and decision-making authority</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-white rounded-lg p-4 border border-red-200">
+                <h3 class="font-bold text-red-800 mb-2">Custom One-Offs</h3>
+                <p class="text-red-700 text-sm">Taking on custom work that doesn't fit your standardized service model</p>
+            </div>
+        </div>
+
+        <!-- Action Checklist -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-tasks text-teal-600 mr-3"></i>
+                Valley Navigation Checklist
+            </h2>
+            
+            <div class="space-y-4" id="checklist">
+                <!-- Checklist items will be populated by JavaScript -->
+            </div>
+            
+            <div class="mt-8 flex items-center justify-between">
+                <div class="text-sm text-gray-600">
+                    <span id="checklistProgress">0</span> of <span id="checklistTotal">0</span> items completed
+                </div>
+                <div class="w-64 bg-gray-200 rounded-full h-2">
+                    <div id="checklistProgressBar" class="bg-red-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Minara Creative Marketing | 
+                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const phase4Checklist = [
+            { id: 'billing_audit', text: 'Conduct emergency billing audit and identify issues', completed: false },
+            { id: 'price_increases', text: 'Issue price increases for underpriced services', completed: false },
+            { id: 'ar_live', text: 'Get AR automation system live immediately', completed: false },
+            { id: 'payment_terms', text: 'Tighten payment terms and policies', completed: false },
+            { id: 'headcount_plan', text: 'Create headcount plan tied to pipeline and utilization', completed: false },
+            { id: 'freeze_hires', text: 'Freeze non-critical hiring until stabilized', completed: false },
+            { id: 'quality_gates', text: 'Implement quality gates and problem management', completed: false },
+            { id: 'post_incident', text: 'Establish post-incident review process', completed: false },
+            { id: 'icp_enforcement', text: 'Strictly enforce ICP and exit non-ideal clients', completed: false },
+            { id: 'weekly_cash', text: 'Start weekly cash flow and margin tracking meetings', completed: false },
+            { id: 'am_pipeline', text: 'Build AM pipeline >20% of MRR', completed: false },
+            { id: 'project_recovery', text: 'Recover delayed or over-budget projects', completed: false }
+        ];
+
+        function renderChecklist() {
+            const checklistDiv = document.getElementById('checklist');
+            const totalItems = phase4Checklist.length;
+            let completedItems = 0;
+
+            checklistDiv.innerHTML = phase4Checklist.map(item => {
+                const isCompleted = localStorage.getItem(`phase4_${item.id}`) === 'true';
+                if (isCompleted) completedItems++;
+                
+                return `
+                    <div class="checklist-item ${isCompleted ? 'completed' : ''} rounded-lg p-4 border border-gray-200 cursor-pointer" 
+                         onclick="toggleChecklistItem('${item.id}')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center ${isCompleted ? 'bg-white border-white' : 'border-gray-300'}">
+                                ${isCompleted ? '<i class="fas fa-check text-green-600 text-sm"></i>' : ''}
+                            </div>
+                            <span class="flex-1 ${isCompleted ? 'text-white' : 'text-gray-700'}">${item.text}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update progress
+            document.getElementById('checklistProgress').textContent = completedItems;
+            document.getElementById('checklistTotal').textContent = totalItems;
+            document.getElementById('checklistProgressBar').style.width = `${(completedItems / totalItems) * 100}%`;
+        }
+
+        function toggleChecklistItem(id) {
+            const currentState = localStorage.getItem(`phase4_${id}`) === 'true';
+            localStorage.setItem(`phase4_${id}`, !currentState);
+            renderChecklist();
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderChecklist();
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

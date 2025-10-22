@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MSP Revenue Scaling Roadmap - Minara Creative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #4B8C8C 0%, #00B8A9 100%); }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .glass-effect { backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); }
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite alternate; }
+        @keyframes pulse-glow { from { box-shadow: 0 0 20px rgba(0,184,169,0.3); } to { box-shadow: 0 0 30px rgba(0,184,169,0.6); } }
+        #vanta-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .content-layer { position: relative; z-index: 10; }
+    </style>
+</head>
+<body class="min-h-screen overflow-hidden">
+    <div id="vanta-bg"></div>
+    
+    <div class="content-layer min-h-screen flex items-center justify-center p-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Column: Content -->
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <div class="inline-block">
+                        <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium glass-effect">
+                            <i class="fas fa-chart-line mr-2"></i>Complete Growth Framework
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-6xl font-bold text-white leading-tight text-shadow">
+                        The MSP Revenue 
+                        <span class="text-yellow-300">Scaling</span> 
+                        Roadmap
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl text-white/90 font-light leading-relaxed">
+                        From $500K to $5M without dying at $5M
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 glass-effect hover-lift">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-calculator text-yellow-300 text-xl"></i>
+                            <span class="text-white font-medium">Calculators</span>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 glass-effect hover-lift">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-file-alt text-yellow-300 text-xl"></i>
+                            <span class="text-white font-medium">Templates</span>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 glass-effect hover-lift">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-calendar text-yellow-300 text-xl"></i>
+                            <span class="text-white font-medium">90-Day Plan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pt-8">
+                    <button onclick="window.location.href='how-to-use.html'" 
+                            class="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-bold py-4 px-8 rounded-lg text-lg pulse-glow hover-lift transition-all duration-300">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Your Revenue Journey
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Column: Visual Element -->
+            <div class="relative">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 glass-effect hover-lift">
+                    <div class="text-center space-y-6">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-3xl text-gray-800"></i>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-white">Revenue Growth Framework</h3>
+                            <p class="text-white/80 text-lg">5 phases from startup to exit-ready</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-yellow-300">$500K</div>
+                                <div class="text-white/80 text-sm">Starting Point</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-yellow-300">$5M</div>
+                                <div class="text-white/80 text-sm">Scale Target</div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <div class="bg-gradient-to-r from-yellow-300 to-yellow-500 text-gray-800 font-bold py-3 px-6 rounded-lg">
+                                <i class="fas fa-phone mr-2"></i>
+                                Book a free 30-minute Revenue Leak Audit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Brand Attribution -->
+    <div class="absolute bottom-4 right-8 content-layer">
+        <div class="text-white/60 text-sm">
+            <a href="https://minaracreativemarketing.com" class="hover:text-white transition-colors">
+                Minara Creative Marketing
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Vanta.js background
+        VANTA.BIRDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundColor: 0x4b8c8c,
+            color1: 0x00b8a9,
+            color2: 0xe4b343,
+            birdSize: 1.20,
+            wingSpan: 25.00,
+            speedLimit: 3.00,
+            separation: 20.00,
+            alignment: 20.00,
+            cohesion: 20.00,
+            quantity: 3.00
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

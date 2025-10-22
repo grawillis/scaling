@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase Timelines & ROI - MSP Revenue Scaling Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .timeline-container { position: relative; }
+        .timeline-line { position: absolute; left: 30px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; }
+        .timeline-item { position: relative; margin-left: 60px; }
+        .timeline-dot { position: absolute; left: -90px; top: 8px; width: 20px; height: 20px; border-radius: 50%; background: #4B8C8C; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .phase-card { transition: all 0.3s ease; }
+        .phase-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .roi-positive { background: linear-gradient(135deg, #10b981, #059669); }
+        .roi-neutral { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .timeline-bar { height: 8px; border-radius: 4px; transition: width 0.8s ease-in-out; }
+        .phase-1-bar { background: linear-gradient(90deg, #4B8C8C, #00B8A9); }
+        .phase-2-bar { background: linear-gradient(90deg, #059669, #10b981); }
+        .phase-3-bar { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+        .phase-4-bar { background: linear-gradient(90deg, #dc2626, #ef4444); }
+        .phase-5-bar { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='templates.html'" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800">Phase Timelines & ROI</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page 17 of 18</span>
+                    <button onclick="window.location.href='resources.html'" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                        Next <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-teal-600 to-teal-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Phase Timelines & ROI
+            </h1>
+            <p class="text-lg text-teal-100 max-w-3xl mx-auto">
+                Investment requirements, timelines, and expected returns for each growth phase
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Timeline Overview -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-clock text-teal-600 mr-3"></i>
+                Complete Timeline Overview
+            </h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Phase 1 -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot bg-gradient-to-r from-teal-500 to-teal-600"></div>
+                    <div class="bg-gradient-to-r from-teal-50 to-teal-100 rounded-lg p-6 border border-teal-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-teal-800">Phase 1: Foundation Building</h3>
+                            <span class="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">60-90 days</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-teal-700 mb-1">
+                                <span>Timeline Progress</span>
+                                <span>90 days</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="timeline-bar phase-1-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <p class="text-teal-700 mb-4">Establish foundational systems and processes for repeatable growth</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-teal-200 text-teal-800 px-2 py-1 rounded text-xs">PSA Implementation</span>
+                            <span class="bg-teal-200 text-teal-800 px-2 py-1 rounded text-xs">SOP Documentation</span>
+                            <span class="bg-teal-200 text-teal-800 px-2 py-1 rounded text-xs">Service Definition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot bg-gradient-to-r from-green-500 to-green-600"></div>
+                    <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-green-800">Phase 2: Systematization</h3>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">90 days</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-green-700 mb-1">
+                                <span>Timeline Progress</span>
+                                <span>90 days</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="timeline-bar phase-2-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <p class="text-green-700 mb-4">Move from founder-dependent to system-dependent operations</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">ICP Definition</span>
+                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">Productized Services</span>
+                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">CRM Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-blue-800">Phase 3: Infrastructure Development</h3>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">90-120 days</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-blue-700 mb-1">
+                                <span>Timeline Progress</span>
+                                <span>120 days</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="timeline-bar phase-3-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <p class="text-blue-700 mb-4">Build robust infrastructure to support rapid growth</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Full PSA</span>
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">AR Automation</span>
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Financial Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-dot bg-gradient-to-r from-red-500 to-red-600"></div>
+                    <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-lg p-6 border border-red-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-red-800">Phase 4: Valley Navigation</h3>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">90 days</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-red-700 mb-1">
+                                <span>Timeline Progress</span>
+                                <span>90 days</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="timeline-bar phase-4-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <p class="text-red-700 mb-4">Emergency triage and stabilization at the $5M plateau</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-200 text-red-800 px-2 py-1 rounded text-xs">Cash Triage</span>
+                            <span class="bg-red-200 text-red-800 px-2 py-1 rounded text-xs">Quality Gates</span>
+                            <span class="bg-red-200 text-red-800 px-2 py-1 rounded text-xs">ICP Enforcement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-gradient-to-r from-purple-500 to-purple-600"></div>
+                    <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-purple-800">Phase 5: Scaling for Exit</h3>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Ongoing</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-purple-700 mb-1">
+                                <span>Timeline Progress</span>
+                                <span>Continuous</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="timeline-bar phase-5-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <p class="text-purple-700 mb-4">Build a business that works without you</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">BHAG Setting</span>
+                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Exit Planning</span>
+                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Board Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment & ROI Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+        <!-- Investment Requirements -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-dollar-sign text-teal-600 mr-3"></i>
+                Investment Requirements
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Phase 1 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-bold text-gray-800">Phase 1: Foundation</h3>
+                        <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded text-sm font-medium">$5K</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>PSA Lite/CRM</span>
+                            <span>$200/month</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Time tracking tool</span>
+                            <span>$100/month</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>AR workflow setup</span>
+                            <span>$500 one-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-bold text-gray-800">Phase 2: Systematization</h3>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">$15K</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>CRM implementation</span>
+                            <span>$8,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Proposal tool</span>
+                            <span>$3,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Offer library development</span>
+                            <span>$4,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-bold text-gray-800">Phase 3: Infrastructure</h3>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">$50K</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>PSA full implementation</span>
+                            <span>$25,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>AR automation</span>
+                            <span>$15,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Financial dashboard</span>
+                            <span>$10,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-bold text-gray-800">Phase 4: Valley Navigation</h3>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm font-medium">Variable</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>Emergency consulting</span>
+                            <span>$5-25K</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>System fixes</span>
+                            <span>$10-50K</span>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Cost varies based on issues found</div>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-bold text-gray-800">Phase 5: Scaling for Exit</h3>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium">Ongoing</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>Management team</span>
+                            <span>$200K+/year</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Exit preparation</span>
+                            <span>$25-100K</span>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Investment in exit readiness</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI Analysis -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-chart-line text-teal-600 mr-3"></i>
+                Return on Investment
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Phase 1 ROI -->
+                <div class="roi-positive rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">Phase 1 ROI</h3>
+                        <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">300-500%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Investment: $5K</h4>
+                            <p class="text-green-100 text-sm">PSA, time tracking, basic AR workflow</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Return: $15-25K</h4>
+                            <p class="text-green-100 text-sm">Pricing improvements, rework reduction, efficiency gains</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 ROI -->
+                <div class="roi-positive rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">Phase 2 ROI</h3>
+                        <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">400-600%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Investment: $15K</h4>
+                            <p class="text-green-100 text-sm">CRM, proposal tools, offer library</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Return: $60-90K</h4>
+                            <p class="text-green-100 text-sm">Average MRR lift, improved win rate, sales efficiency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 ROI -->
+                <div class="roi-positive rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">Phase 3 ROI</h3>
+                        <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">200-400%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Investment: $50K</h4>
+                            <p class="text-green-100 text-sm">Full PSA, AR automation, financial dashboard</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Return: $100-200K</h4>
+                            <p class="text-green-100 text-sm">DSO reduction, margin expansion, operational efficiency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 ROI -->
+                <div class="roi-neutral rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">Phase 4 ROI</h3>
+                        <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Variable</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Investment: $15-75K</h4>
+                            <p class="text-yellow-100 text-sm">Emergency fixes, consulting, system corrections</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Return: Business Survival</h4>
+                            <p class="text-yellow-100 text-sm">Cash stabilization, churn risk reduction, operational recovery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5 ROI -->
+                <div class="roi-positive rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">Phase 5 ROI</h3>
+                        <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">1000%+</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Investment: $200K+</h4>
+                            <p class="text-green-100 text-sm">Management team, exit preparation, strategic investments</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Return: $2M+ Exit Value</h4>
+                            <p class="text-green-100 text-sm">Multiple expansion, sustainable growth, exit readiness</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Minara Creative Marketing | 
+                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const timelineBars = entry.target.querySelectorAll('.timeline-bar');
+                        timelineBars.forEach(bar => {
+                            bar.style.width = bar.style.width || '0%';
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

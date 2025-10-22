@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1: Pre-$1M Foundation Building - MSP Revenue Scaling Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .phase-header { background: linear-gradient(135deg, #4B8C8C, #00B8A9); }
+        .action-card { transition: all 0.3s ease; }
+        .action-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .kpi-card { background: linear-gradient(135deg, #f8fafc, #e2e8f0); }
+        .checklist-item { transition: all 0.3s ease; }
+        .checklist-item.completed { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .timeline-item { position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-dot { position: relative; z-index: 10; background: white; border: 3px solid #4B8C8C; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='metrics-snapshot.html'" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800">Phase 1: Foundation Building</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Pages 5-6 of 18</span>
+                    <button onclick="window.location.href='phase-2.html'" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                        Next Phase <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Phase Header -->
+    <div class="phase-header py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <span class="text-white font-medium">Phase 1: Pre-$1M</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Foundation Building
+            </h1>
+            <p class="text-xl text-teal-100 max-w-3xl mx-auto">
+                Make growth repeatable without chaos
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Goal Section -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-bullseye text-white text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Primary Goal</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Establish the foundational systems and processes that make growth repeatable and scalable. 
+                        This phase is about moving from reactive chaos to proactive, systematized operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Items Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            <!-- Define Services -->
+            <div class="action-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-list-alt text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Define Services</h3>
+                </div>
+                
+                <p class="text-gray-600 mb-6">
+                    Create clear service definitions with scope, exclusions, SLAs, pricing, and profit per service.
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Document service scope and deliverables</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Define exclusions and change control process</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Set SLA targets and penalties</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Calculate profit margin per service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document SOPs -->
+            <div class="action-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-clipboard-list text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Document SOPs</h3>
+                </div>
+                
+                <p class="text-gray-600 mb-6">
+                    Create standard operating procedures for your most common tickets, onboarding, patching, backups, and escalation paths.
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Top 10 ticket types documented</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Client onboarding checklist</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Patching and maintenance procedures</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Backup and recovery processes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track Profit per Client -->
+            <div class="action-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-pie text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Track Profit per Client</h3>
+                </div>
+                
+                <p class="text-gray-600 mb-6">
+                    Implement tracking to understand which clients are profitable and which are draining resources.
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Time tracking by client and service</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Monthly profit analysis per client</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Identify and reprice low-margin accounts</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Consider exiting unprofitable clients</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculate CAC -->
+            <div class="action-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-calculator text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Calculate CAC</h3>
+                </div>
+                
+                <p class="text-gray-600 mb-6">
+                    Understand your true customer acquisition cost and benchmark against industry standards.
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Track all sales and marketing expenses</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Calculate CAC per new client</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Benchmark: SMB ~$585, Mid-market ~$4,438</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span class="text-sm">Target: CAC within 1-1.5x benchmark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Build Your Stack -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-layer-group text-teal-600 mr-3"></i>
+                Build Your Stack on Value
+            </h2>
+            
+            <p class="text-gray-600 text-lg mb-8">
+                Organize your technology stack around four value lenses: protection, creation, capture, and delivery.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-red-50 rounded-lg border border-red-200">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Protection</h3>
+                    <p class="text-gray-600 text-sm">Security, backup, monitoring tools</p>
+                </div>
+                
+                <div class="text-center p-6 bg-blue-50 rounded-lg border border-blue-200">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-magic text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Creation</h3>
+                    <p class="text-gray-600 text-sm">Productivity, collaboration tools</p>
+                </div>
+                
+                <div class="text-center p-6 bg-green-50 rounded-lg border border-green-200">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-database text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Capture</h3>
+                    <p class="text-gray-600 text-sm">Data collection, analytics tools</p>
+                </div>
+                
+                <div class="text-center p-6 bg-purple-50 rounded-lg border border-purple-200">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Delivery</h3>
+                    <p class="text-gray-600 text-sm">Service delivery, automation tools</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPIs Section -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-chart-line text-teal-600 mr-3"></i>
+                Key Performance Indicators
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="kpi-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-gray-800 mb-2">>60%</div>
+                    <div class="text-sm text-gray-600 mb-2">Service Gross Margin</div>
+                    <div class="text-xs text-gray-500">Minimum target for sustainable growth</div>
+                </div>
+                
+                <div class="kpi-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-gray-800 mb-2">1-1.5x</div>
+                    <div class="text-sm text-gray-600 mb-2">CAC vs Benchmark</div>
+                    <div class="text-xs text-gray-500">Stay within industry standards</div>
+                </div>
+                
+                <div class="kpi-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-gray-800 mb-2"><14 days</div>
+                    <div class="text-sm text-gray-600 mb-2">Client Onboarding</div>
+                    <div class="text-xs text-gray-500">Time to first value delivery</div>
+                </div>
+                
+                <div class="kpi-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-gray-800 mb-2">>90%</div>
+                    <div class="text-sm text-gray-600 mb-2">SLA Attainment</div>
+                    <div class="text-xs text-gray-500">Consistent service delivery</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investments & Timeline -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            <!-- Investments -->
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-dollar-sign text-teal-600 mr-3"></i>
+                    Investments Required
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <span class="font-medium text-gray-700">PSA Lite or CRM</span>
+                        <span class="text-teal-600 font-bold">$50-200/month</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <span class="font-medium text-gray-700">Time Tracking Tool</span>
+                        <span class="text-teal-600 font-bold">$5-15/user/month</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <span class="font-medium text-gray-700">Basic AR Workflow</span>
+                        <span class="text-teal-600 font-bold">$30-100/month</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-teal-50 rounded-lg border border-teal-200">
+                        <span class="font-medium text-gray-700">Total Monthly Investment</span>
+                        <span class="text-teal-600 font-bold">$85-315/month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-calendar-alt text-teal-600 mr-3"></i>
+                    Implementation Timeline
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="timeline-item flex items-start space-x-4">
+                        <div class="timeline-dot w-10 h-10 rounded-full flex items-center justify-center">
+                            <span class="text-teal-600 font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Days 1-30: Service Definition</h3>
+                            <p class="text-gray-600 text-sm">Document services, SOPs, and pricing structure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-start space-x-4">
+                        <div class="timeline-dot w-10 h-10 rounded-full flex items-center justify-center">
+                            <span class="text-teal-600 font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Days 31-60: System Implementation</h3>
+                            <p class="text-gray-600 text-sm">Deploy PSA, time tracking, and AR automation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-start space-x-4">
+                        <div class="timeline-dot w-10 h-10 rounded-full flex items-center justify-center">
+                            <span class="text-teal-600 font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Days 61-90: Optimization</h3>
+                            <p class="text-gray-600 text-sm">Fine-tune processes and train team on new systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Pitfalls -->
+        <div class="bg-red-50 border border-red-200 rounded-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-red-800 mb-6 flex items-center">
+                <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                Common Pitfalls to Avoid
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg p-4 border border-red-200">
+                    <h3 class="font-bold text-red-800 mb-2">Selling to Everyone</h3>
+                    <p class="text-red-700 text-sm">Not all clients are good clients. Focus on your ideal customer profile.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 border border-red-200">
+                    <h3 class="font-bold text-red-800 mb-2">Underpricing Labor-Heavy Work</h3>
+                    <p class="text-red-700 text-sm">Price services based on actual time and resource consumption.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 border border-red-200">
+                    <h3 class="font-bold text-red-800 mb-2">No AR Controls</h3>
+                    <p class="text-red-700 text-sm">Poor accounts receivable management leads to high DSO and cash flow issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Checklist -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-tasks text-teal-600 mr-3"></i>
+                Phase 1 Action Checklist
+            </h2>
+            
+            <div class="space-y-4" id="checklist">
+                <!-- Checklist items will be populated by JavaScript -->
+            </div>
+            
+            <div class="mt-8 flex items-center justify-between">
+                <div class="text-sm text-gray-600">
+                    <span id="checklistProgress">0</span> of <span id="checklistTotal">0</span> items completed
+                </div>
+                <div class="w-64 bg-gray-200 rounded-full h-2">
+                    <div id="checklistProgressBar" class="bg-teal-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Minara Creative Marketing | 
+                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const phase1Checklist = [
+            { id: 'services', text: 'Define services with scope, exclusions, SLAs, pricing, profit per service', completed: false },
+            { id: 'sops', text: 'Document SOPs for top 10 tickets, onboarding, patching, backups, escalation', completed: false },
+            { id: 'profit', text: 'Track profit per client and reprice/exit low-margin accounts', completed: false },
+            { id: 'cac', text: 'Calculate CAC and benchmark vs industry standards', completed: false },
+            { id: 'stack', text: 'Build technology stack on value lenses (protection, creation, capture, delivery)', completed: false },
+            { id: 'ar', text: 'Implement basic AR workflow and payment terms', completed: false },
+            { id: 'psa', text: 'Deploy PSA lite or CRM system', completed: false },
+            { id: 'tracking', text: 'Set up time tracking for all billable activities', completed: false }
+        ];
+
+        function renderChecklist() {
+            const checklistDiv = document.getElementById('checklist');
+            const totalItems = phase1Checklist.length;
+            let completedItems = 0;
+
+            checklistDiv.innerHTML = phase1Checklist.map(item => {
+                const isCompleted = localStorage.getItem(`phase1_${item.id}`) === 'true';
+                if (isCompleted) completedItems++;
+                
+                return `
+                    <div class="checklist-item ${isCompleted ? 'completed' : ''} rounded-lg p-4 border border-gray-200 cursor-pointer" 
+                         onclick="toggleChecklistItem('${item.id}')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center ${isCompleted ? 'bg-white border-white' : 'border-gray-300'}">
+                                ${isCompleted ? '<i class="fas fa-check text-green-600 text-sm"></i>' : ''}
+                            </div>
+                            <span class="flex-1 ${isCompleted ? 'text-white' : 'text-gray-700'}">${item.text}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update progress
+            document.getElementById('checklistProgress').textContent = completedItems;
+            document.getElementById('checklistTotal').textContent = totalItems;
+            document.getElementById('checklistProgressBar').style.width = `${(completedItems / totalItems) * 100}%`;
+        }
+
+        function toggleChecklistItem(id) {
+            const currentState = localStorage.getItem(`phase1_${id}`) === 'true';
+            localStorage.setItem(`phase1_${id}`, !currentState);
+            renderChecklist();
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderChecklist();
+            
+            // Add smooth scrolling for better UX
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

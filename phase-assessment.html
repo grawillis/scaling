@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase Assessment - MSP Revenue Scaling Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .form-card { transition: all 0.3s ease; }
+        .form-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .result-card { background: linear-gradient(135deg, #4B8C8C, #00B8A9); }
+        .risk-high { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .risk-medium { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .risk-low { background: linear-gradient(135deg, #10b981, #059669); }
+        .phase-badge { 
+            background: linear-gradient(135deg, #4B8C8C, #00B8A9);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='how-to-use.html'" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800">Phase Assessment</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page 3 of 18</span>
+                    <button onclick="window.location.href='metrics-snapshot.html'" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                        Next <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-teal-600 to-teal-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Phase Assessment
+            </h1>
+            <p class="text-lg text-teal-100 max-w-3xl mx-auto">
+                Determine your current growth phase and get personalized recommendations
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Assessment Form -->
+            <div class="space-y-8">
+                <div class="form-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-clipboard-list text-teal-600 mr-3"></i>
+                        Business Information
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Revenue Band -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Revenue Band <span class="text-red-500">*</span>
+                            </label>
+                            <select id="revenueBand" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                <option value="">Select your current revenue band</option>
+                                <option value="<1M">Under $1M</option>
+                                <option value="1–3M">$1M – $3M</option>
+                                <option value="3–5M">$3M – $5M</option>
+                                <option value="~5M plateau">~$5M plateau</option>
+                                <option value="5–10M">$5M – $10M</option>
+                            </select>
+                        </div>
+
+                        <!-- Client Count -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Client Count <span class="text-red-500">*</span>
+                            </label>
+                            <input type="number" id="clientCount" placeholder="Total number of clients" 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                        </div>
+
+                        <!-- Average MRR -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Average MRR per Client <span class="text-red-500">*</span>
+                            </label>
+                            <input type="number" id="avgMRR" placeholder="Average monthly recurring revenue" 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Systems Assessment -->
+                <div class="form-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-cogs text-teal-600 mr-3"></i>
+                        Systems Maturity
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">PSA in place</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="psa" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">SOPs documented</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="sops" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">AR automation live</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="arAuto" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">AM/TBR cadence</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="amTbr" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">Finance controller in seat</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="finance" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button onclick="calculatePhase()" class="w-full bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 font-medium text-lg">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Calculate My Phase
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="space-y-8">
+                <div id="resultsPanel" class="hidden">
+                    <div class="result-card rounded-xl p-8 text-white shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            Your Assessment Results
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="text-center">
+                                <div id="phaseBadge" class="phase-badge inline-block px-6 py-3 rounded-full text-xl font-bold mb-4">
+                                    Phase 1
+                                </div>
+                                <p class="text-teal-100 text-lg">Your Current Growth Phase</p>
+                            </div>
+
+                            <div class="bg-white/20 rounded-lg p-4">
+                                <h3 class="font-bold text-lg mb-2">Start with pages:</h3>
+                                <p id="pageRange" class="text-teal-100">5-6</p>
+                            </div>
+
+                            <div id="riskCard" class="bg-white/20 rounded-lg p-4">
+                                <h3 class="font-bold text-lg mb-2">Risk Assessment:</h3>
+                                <div class="flex items-center space-x-3">
+                                    <div id="riskBadge" class="px-3 py-1 rounded-full text-sm font-medium">
+                                        Low Risk
+                                    </div>
+                                    <p id="riskDescription" class="text-teal-100 text-sm">You're on track with good system maturity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                            Next Steps
+                        </h3>
+                        
+                        <div id="recommendations" class="space-y-4">
+                            <!-- Dynamic recommendations will be inserted here -->
+                        </div>
+
+                        <div class="mt-8 flex space-x-4">
+                            <button onclick="window.location.href='metrics-snapshot.html'" class="bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 font-medium">
+                                Continue to Metrics <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                            <button onclick="resetForm()" class="bg-gray-600 text-white py-3 px-6 rounded-lg hover:bg-gray-700 font-medium">
+                                <i class="fas fa-redo mr-2"></i>Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Default Instructions -->
+                <div id="instructionsPanel" class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-info-circle text-blue-500 mr-3"></i>
+                        Complete Your Assessment
+                    </h3>
+                    
+                    <div class="space-y-4 text-gray-600">
+                        <p class="text-lg">Fill out the form to the left to determine:</p>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                                <span>Your current growth phase (1-5)</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                                <span>Risk level and system maturity</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                                <span>Recommended pages to start with</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                                <span>Personalized action items</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-lightbulb text-blue-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-blue-800">Pro Tip</h4>
+                                <p class="text-blue-700 text-sm">Be honest about your current systems. This assessment will provide the most value when you accurately represent your business reality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Minara Creative Marketing | 
+                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function calculatePhase() {
+            // Get form values
+            const revenueBand = document.getElementById('revenueBand').value;
+            const clientCount = parseInt(document.getElementById('clientCount').value) || 0;
+            const avgMRR = parseInt(document.getElementById('avgMRR').value) || 0;
+            
+            // Get system maturity checkboxes
+            const systems = {
+                psa: document.getElementById('psa').checked,
+                sops: document.getElementById('sops').checked,
+                arAuto: document.getElementById('arAuto').checked,
+                amTbr: document.getElementById('amTbr').checked,
+                finance: document.getElementById('finance').checked
+            };
+            
+            // Validate required fields
+            if (!revenueBand || !clientCount || !avgMRR) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Calculate red flags (missing systems)
+            const redFlags = Object.values(systems).filter(system => !system).length;
+            
+            // Determine phase
+            let phase, pageRange, risk, riskClass, riskDesc;
+            
+            switch(revenueBand) {
+                case '<1M':
+                    phase = 'Phase 1';
+                    pageRange = '5-6';
+                    break;
+                case '1–3M':
+                    phase = 'Phase 2';
+                    pageRange = '7-8';
+                    break;
+                case '3–5M':
+                    phase = 'Phase 3';
+                    pageRange = '9-10';
+                    break;
+                case '~5M plateau':
+                    phase = redFlags >= 2 ? 'Phase 4' : 'Phase 3';
+                    pageRange = redFlags >= 2 ? '11-13' : '9-10';
+                    break;
+                case '5–10M':
+                    phase = redFlags >= 2 ? 'Phase 4' : 'Phase 5';
+                    pageRange = redFlags >= 2 ? '11-13' : '14-15';
+                    break;
+            }
+            
+            // Determine risk
+            if (redFlags >= 3) {
+                risk = 'High Risk';
+                riskClass = 'risk-high';
+                riskDesc = 'Multiple system gaps detected - immediate attention needed';
+            } else if (redFlags === 2) {
+                risk = 'Medium Risk';
+                riskClass = 'risk-medium';
+                riskDesc = 'Some system gaps identified - prioritize improvements';
+            } else {
+                risk = 'Low Risk';
+                riskClass = 'risk-low';
+                riskDesc = 'Good system foundation - focus on optimization';
+            }
+            
+            // Update UI
+            document.getElementById('phaseBadge').textContent = phase;
+            document.getElementById('pageRange').textContent = pageRange;
+            document.getElementById('riskBadge').textContent = risk;
+            document.getElementById('riskBadge').className = `px-3 py-1 rounded-full text-sm font-medium text-white ${riskClass}`;
+            document.getElementById('riskDescription').textContent = riskDesc;
+            
+            // Generate recommendations
+            generateRecommendations(phase, redFlags, systems);
+            
+            // Show results
+            document.getElementById('resultsPanel').classList.remove('hidden');
+            document.getElementById('instructionsPanel').classList.add('hidden');
+            
+            // Store data for next steps
+            localStorage.setItem('assessmentData', JSON.stringify({
+                revenueBand,
+                clientCount,
+                avgMRR,
+                phase,
+                pageRange,
+                risk,
+                redFlags,
+                systems
+            }));
+        }
+        
+        function generateRecommendations(phase, redFlags, systems) {
+            const recommendationsDiv = document.getElementById('recommendations');
+            let recommendations = [];
+            
+            // Phase-specific recommendations
+            switch(phase) {
+                case 'Phase 1':
+                    recommendations = [
+                        'Define your service offerings with clear scope and pricing',
+                        'Document SOPs for top 10 ticket types',
+                        'Implement basic time tracking and billing',
+                        'Calculate your current CAC and benchmark against industry'
+                    ];
+                    break;
+                case 'Phase 2':
+                    recommendations = [
+                        'Define your Ideal Customer Profile (ICP)',
+                        'Productize your services into packages',
+                        'Implement CRM with sales pipeline',
+                        'Start quarterly TBRs with key clients'
+                    ];
+                    break;
+                case 'Phase 3':
+                    recommendations = [
+                        'Hire operations and finance roles',
+                        'Implement AR automation',
+                        'Build financial dashboard with GM by service',
+                        'Standardize and automate processes'
+                    ];
+                    break;
+                case 'Phase 4':
+                    recommendations = [
+                        'Conduct immediate billing audit and price increases',
+                        'Implement weekly cash meetings',
+                        'Enforce ICP and exit non-ideal clients',
+                        'Build AM pipeline for expansion'
+                    ];
+                    break;
+                case 'Phase 5':
+                    recommendations = [
+                        'Set BHAG and Financial Freedom Number',
+                        'Align compensation to margin and growth',
+                        'Implement quarterly board-style reviews',
+                        'Ensure no client >10% of revenue'
+                    ];
+                    break;
+            }
+            
+            // Add system-specific recommendations
+            if (!systems.psa) recommendations.push('Implement PSA system immediately');
+            if (!systems.sops) recommendations.push('Document core operational procedures');
+            if (!systems.arAuto) recommendations.push('Set up automated billing and collections');
+            if (!systems.amTbr) recommendations.push('Establish quarterly business reviews');
+            if (!systems.finance) recommendations.push('Hire finance controller or outsource');
+            
+            // Render recommendations
+            recommendationsDiv.innerHTML = recommendations.map(rec => `
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-arrow-right text-teal-600 mt-1"></i>
+                    <span class="text-gray-700">${rec}</span>
+                </div>
+            `).join('');
+        }
+        
+        function resetForm() {
+            // Reset form fields
+            document.getElementById('revenueBand').value = '';
+            document.getElementById('clientCount').value = '';
+            document.getElementById('avgMRR').value = '';
+            
+            // Reset checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Hide results, show instructions
+            document.getElementById('resultsPanel').classList.add('hidden');
+            document.getElementById('instructionsPanel').classList.remove('hidden');
+            
+            // Clear stored data
+            localStorage.removeItem('assessmentData');
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's saved data
+            const savedData = localStorage.getItem('assessmentData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                // Auto-populate form if data exists
+                document.getElementById('revenueBand').value = data.revenueBand || '';
+                document.getElementById('clientCount').value = data.clientCount || '';
+                document.getElementById('avgMRR').value = data.avgMRR || '';
+                
+                // Restore checkbox states
+                Object.keys(data.systems || {}).forEach(key => {
+                    const checkbox = document.getElementById(key === 'amTbr' ? 'amTbr' : key);
+                    if (checkbox) checkbox.checked = data.systems[key];
+                });
+            }
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

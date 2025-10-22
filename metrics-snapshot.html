@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics Snapshot - MSP Revenue Scaling Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .accent-font { font-family: 'Tajawal', sans-serif; }
+        .metric-card { transition: all 0.3s ease; }
+        .metric-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .calculation-row { background: linear-gradient(135deg, #f8fafc, #e2e8f0); }
+        .result-highlight { background: linear-gradient(135deg, #4B8C8C, #00B8A9); }
+        .warning { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .danger { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .success { background: linear-gradient(135deg, #10b981, #059669); }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='phase-assessment.html'" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-800">Metrics Snapshot</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page 4 of 18</span>
+                    <button onclick="window.location.href='phase-1.html'" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                        Next <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-teal-600 to-teal-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Metrics Snapshot
+            </h1>
+            <p class="text-lg text-teal-100 max-w-3xl mx-auto">
+                Calculate and track your key performance indicators
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Input Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            <!-- Revenue Metrics -->
+            <div class="metric-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-dollar-sign text-teal-600 mr-3"></i>
+                    Revenue Metrics
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Annual Recurring Revenue (ARR)</label>
+                        <input type="number" id="arr" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Recurring Revenue (MRR)</label>
+                        <input type="number" id="mrr" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">MRR Clients</label>
+                        <input type="number" id="mrrClients" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Service Revenue (Monthly)</label>
+                        <input type="number" id="serviceRevenue" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Service COGS (Monthly)</label>
+                        <input type="number" id="serviceCogs" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales & Marketing Metrics -->
+            <div class="metric-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-chart-line text-teal-600 mr-3"></i>
+                    Sales & Marketing
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Sales & Marketing Spend (Period)</label>
+                        <input type="number" id="marketingSpend" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">New Clients (Period)</label>
+                        <input type="number" id="newClients" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Average Retention (Months)</label>
+                        <input type="number" id="retentionMonths" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">AR Balance Today</label>
+                        <input type="number" id="arBalance" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Revenue Last 90 Days</label>
+                        <input type="number" id="revenue90d" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operations Metrics -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            <div class="metric-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-users text-teal-600 mr-3"></i>
+                    Team Metrics
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">FTE Count</label>
+                        <input type="number" id="fteCount" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Available Hours per FTE per Week</label>
+                        <input type="number" id="availableHours" placeholder="40" value="40"
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Billable Hours Last Week</label>
+                        <input type="number" id="billableHours" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-award text-teal-600 mr-3"></i>
+                    Quality Metrics
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">SLA Attainment %</label>
+                        <input type="number" id="slaAttainment" placeholder="0" max="100"
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">CSAT/NPS Score</label>
+                        <input type="number" id="csatNps" placeholder="0" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                               onchange="calculateMetrics()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculated Results -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-calculator text-teal-600 mr-3"></i>
+                Calculated Metrics
+            </h2>
+            
+            <div class="kpi-grid">
+                
+                <!-- Average MRR per Client -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Average MRR per Client</h3>
+                        <i class="fas fa-chart-bar text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="avgMrrPerClient">$0</div>
+                    <div class="text-sm text-gray-600">Target: Phase 1-2 focus on increasing this metric</div>
+                </div>
+
+                <!-- Service Gross Margin -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Service Gross Margin</h3>
+                        <i class="fas fa-percentage text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-2" id="serviceGM">0%</div>
+                    <div class="text-sm text-gray-600">Target: >60% (Phase 1), >65% (Phase 3+)</div>
+                </div>
+
+                <!-- Customer Acquisition Cost -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Customer Acquisition Cost</h3>
+                        <i class="fas fa-dollar-sign text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="cac">$0</div>
+                    <div class="text-sm text-gray-600">Benchmark: SMB ~$585, Mid-market ~$4,438</div>
+                </div>
+
+                <!-- Lifetime Value -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Customer Lifetime Value</h3>
+                        <i class="fas fa-infinity text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="ltv">$0</div>
+                    <div class="text-sm text-gray-600">Target: 3x or higher than CAC</div>
+                </div>
+
+                <!-- LTV/CAC Ratio -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">LTV/CAC Ratio</h3>
+                        <i class="fas fa-balance-scale text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-2" id="ltvCacRatio">0.0</div>
+                    <div class="text-sm text-gray-600">Target: ≥3.0 (Green), 2.5-3.0 (Yellow), <2.5 (Red)</div>
+                </div>
+
+                <!-- Days Sales Outstanding -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Days Sales Outstanding</h3>
+                        <i class="fas fa-clock text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-2" id="dso">0 days</div>
+                    <div class="text-sm text-gray-600">Target: <35 days (Green), 35-45 (Yellow), >45 (Red)</div>
+                </div>
+
+                <!-- Staff-to-Revenue Ratio -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Staff-to-Revenue Ratio</h3>
+                        <i class="fas fa-users text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="staffRevenueRatio">$0</div>
+                    <div class="text-sm text-gray-600">Revenue per FTE annually</div>
+                </div>
+
+                <!-- Utilization Rate -->
+                <div class="calculation-row rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Utilization Rate</h3>
+                        <i class="fas fa-percentage text-teal-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-2" id="utilizationRate">0%</div>
+                    <div class="text-sm text-gray-600">Target: 70-80% (Phase 3+), >65% acceptable</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase Targets -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-target text-teal-600 mr-3"></i>
+                Targets by Phase
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Phase 1: Pre-$1M</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Service GM > 60%
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Onboarding < 14 days
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            SLA > 90%
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Phase 2: $1M-$3M</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Avg MRR up 2-4x in 12 months
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Win rate 25-35%
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Sales cycle < 60 days
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Phase 3: $3M-$5M</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            DSO < 35 days
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Utilization 70-80%
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Ticket reopens < 5%
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Phase 4: $5M Valley</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Cash flow stabilized
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Quality gates enforced
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            ICP strictly enforced
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Phase 5: $5M-$10M</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Net profit ≥ 10% after salary
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            15%+ YoY growth
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            No client > 10% revenue
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-6 bg-teal-50">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4">Your Next Actions</h3>
+                    <div id="nextActions" class="space-y-2 text-sm text-gray-600">
+                        <p>Complete the assessment to see personalized recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Minara Creative Marketing | 
+                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateMetrics() {
+            // Get input values
+            const arr = parseFloat(document.getElementById('arr').value) || 0;
+            const mrr = parseFloat(document.getElementById('mrr').value) || 0;
+            const mrrClients = parseFloat(document.getElementById('mrrClients').value) || 0;
+            const serviceRevenue = parseFloat(document.getElementById('serviceRevenue').value) || 0;
+            const serviceCogs = parseFloat(document.getElementById('serviceCogs').value) || 0;
+            const marketingSpend = parseFloat(document.getElementById('marketingSpend').value) || 0;
+            const newClients = parseFloat(document.getElementById('newClients').value) || 0;
+            const retentionMonths = parseFloat(document.getElementById('retentionMonths').value) || 0;
+            const arBalance = parseFloat(document.getElementById('arBalance').value) || 0;
+            const revenue90d = parseFloat(document.getElementById('revenue90d').value) || 0;
+            const fteCount = parseFloat(document.getElementById('fteCount').value) || 0;
+            const availableHours = parseFloat(document.getElementById('availableHours').value) || 40;
+            const billableHours = parseFloat(document.getElementById('billableHours').value) || 0;
+
+            // Calculate metrics
+            const avgMrrPerClient = mrrClients > 0 ? mrr / mrrClients : 0;
+            const serviceGM = serviceRevenue > 0 ? ((serviceRevenue - serviceCogs) / serviceRevenue) * 100 : 0;
+            const cac = newClients > 0 ? marketingSpend / newClients : 0;
+            const monthlyGrossMarginPerClient = avgMrrPerClient * (serviceGM / 100);
+            const ltv = monthlyGrossMarginPerClient * retentionMonths;
+            const ltvCacRatio = cac > 0 ? ltv / cac : 0;
+            const dso = revenue90d > 0 ? (arBalance / (revenue90d / 90)) : 0;
+            const staffRevenueRatio = fteCount > 0 ? arr / fteCount : 0;
+            const totalAvailableHours = fteCount * availableHours;
+            const utilizationRate = totalAvailableHours > 0 ? (billableHours / totalAvailableHours) * 100 : 0;
+
+            // Update UI
+            document.getElementById('avgMrrPerClient').textContent = '$' + avgMrrPerClient.toLocaleString(undefined, {maximumFractionDigits: 0});
+            document.getElementById('serviceGM').textContent = serviceGM.toFixed(1) + '%';
+            document.getElementById('cac').textContent = '$' + cac.toLocaleString(undefined, {maximumFractionDigits: 0});
+            document.getElementById('ltv').textContent = '$' + ltv.toLocaleString(undefined, {maximumFractionDigits: 0});
+            document.getElementById('ltvCacRatio').textContent = ltvCacRatio.toFixed(1);
+            document.getElementById('dso').textContent = Math.round(dso) + ' days';
+            document.getElementById('staffRevenueRatio').textContent = '$' + staffRevenueRatio.toLocaleString(undefined, {maximumFractionDigits: 0});
+            document.getElementById('utilizationRate').textContent = utilizationRate.toFixed(1) + '%';
+
+            // Apply conditional formatting
+            applyConditionalFormatting('serviceGM', serviceGM, 60, 65);
+            applyConditionalFormatting('ltvCacRatio', ltvCacRatio, 2.5, 3.0);
+            applyConditionalFormatting('dso', dso, 45, 35, true); // Reverse for DSO (lower is better)
+            applyConditionalFormatting('utilizationRate', utilizationRate, 65, 70);
+
+            // Store data for next steps
+            const metricsData = {
+                arr, mrr, mrrClients, avgMrrPerClient, serviceGM, cac, ltv, ltvCacRatio,
+                dso, staffRevenueRatio, utilizationRate
+            };
+            localStorage.setItem('metricsData', JSON.stringify(metricsData));
+
+            // Update next actions
+            updateNextActions(metricsData);
+        }
+
+        function applyConditionalFormatting(elementId, value, redThreshold, greenThreshold, reverse = false) {
+            const element = document.getElementById(elementId);
+            let className = 'text-gray-800';
+            
+            if (reverse) {
+                // For metrics where lower is better (DSO)
+                if (value < greenThreshold) {
+                    className = 'text-green-600';
+                } else if (value <= redThreshold) {
+                    className = 'text-yellow-600';
+                } else {
+                    className = 'text-red-600';
+                }
+            } else {
+                // For metrics where higher is better
+                if (value >= greenThreshold) {
+                    className = 'text-green-600';
+                } else if (value >= redThreshold) {
+                    className = 'text-yellow-600';
+                } else {
+                    className = 'text-red-600';
+                }
+            }
+            
+            element.className = element.className.replace(/text-\w+-\d+/, '') + ' ' + className;
+        }
+
+        function updateNextActions(metricsData) {
+            const nextActionsDiv = document.getElementById('nextActions');
+            const actions = [];
+            
+            if (metricsData.serviceGM < 60) {
+                actions.push('Review and reprice low-margin services');
+            }
+            if (metricsData.ltvCacRatio < 3.0) {
+                actions.push('Improve retention or reduce acquisition costs');
+            }
+            if (metricsData.dso > 35) {
+                actions.push('Implement AR automation and payment policies');
+            }
+            if (metricsData.utilizationRate < 70) {
+                actions.push('Optimize team capacity and scheduling');
+            }
+            
+            if (actions.length === 0) {
+                actions.push('Your metrics look good! Focus on growth initiatives.');
+            }
+            
+            nextActionsDiv.innerHTML = actions.map(action => `
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-arrow-right text-teal-600 text-xs"></i>
+                    <span>${action}</span>
+                </div>
+            `).join('');
+        }
+
+        // Initialize with saved data
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedData = localStorage.getItem('metricsData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                // Auto-populate form fields if data exists
+                Object.keys(data).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element && data[key]) {
+                        element.value = data[key];
+                    }
+                });
+                calculateMetrics();
+            }
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>
