@@ -3,510 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources & Next Steps - MSP Revenue Scaling Roadmap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Resources & Next Steps - MSP Revenue Scaling</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
-        .accent-font { font-family: 'Tajawal', sans-serif; }
-        .resource-card { transition: all 0.3s ease; }
-        .resource-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .tool-card { background: linear-gradient(135deg, #f8fafc, #e2e8f0); }
-        .cta-section { background: linear-gradient(135deg, #4B8C8C, #00B8A9); }
-        .qr-placeholder { width: 120px; height: 120px; background: #e5e7eb; border: 2px dashed #9ca3af; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-indicator {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .tool-stack {
+            margin-bottom: 3rem;
+        }
+
+        .tool-stack h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .phase-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .phase-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .phase-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tool-list {
+            list-style: none;
+        }
+
+        .tool-item {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+        }
+
+        .tool-category {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .tool-options {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .universal-tools {
+            background: #f0f4f8;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .universal-tools h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .promo-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .promo-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .promo-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .promo-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .promo-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .promo-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-icon {
+            margin-right: 0.5rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-item {
+            text-align: center;
+        }
+
+        .cta-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-section {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-wrapper {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-4">
-                    <button onclick="window.location.href='timelines.html'" class="text-gray-600 hover:text-gray-800">
-                        <i class="fas fa-arrow-left text-xl"></i>
-                    </button>
-                    <h1 class="text-xl font-bold text-gray-800">Resources & Next Steps</h1>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-indicator">Page 18 of 18</div>
+                <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Start</a>
+                <h1>Resources & Next Steps</h1>
+                <p class="subtitle">Tools, resources, and support to accelerate your revenue scaling journey</p>
+            </div>
+
+            <div class="tool-stack">
+                <h2>Recommended Tool Stack by Phase</h2>
+
+                <div class="phase-grid">
+                    <div class="phase-card">
+                        <div class="phase-title">
+                            <span class="phase-number">1</span>
+                            Pre-$1M Foundation
+                        </div>
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <span class="tool-category">PSA Lite:</span>
+                                <span class="tool-options"> Syncro/Autotask</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Time Tracking:</span>
+                                <span class="tool-options"> Toggl/Harvest</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Basic AR:</span>
+                                <span class="tool-options"> QuickBooks/Xero</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Documentation:</span>
+                                <span class="tool-options"> ITGlue/Confluence</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-title">
+                            <span class="phase-number">2</span>
+                            $1M-$3M Systematization
+                        </div>
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <span class="tool-category">CRM:</span>
+                                <span class="tool-options"> HubSpot/Salesforce</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Proposal Tool:</span>
+                                <span class="tool-options"> Qwilr/Proposify</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Email Marketing:</span>
+                                <span class="tool-options"> Mailchimp/ActiveCampaign</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">AM Platform:</span>
+                                <span class="tool-options"> ChurnZero/ClientSuccess</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-title">
+                            <span class="phase-number">3</span>
+                            $3M-$5M Infrastructure
+                        </div>
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <span class="tool-category">Full PSA:</span>
+                                <span class="tool-options"> ConnectWise/Autotask</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">AR Automation:</span>
+                                <span class="tool-options"> Chargify/Chargebee</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Financial Dashboard:</span>
+                                <span class="tool-options"> Power BI/Tableau</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Integration Platform:</span>
+                                <span class="tool-options"> Zapier/PieSync</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-title">
+                            <span class="phase-number">4</span>
+                            $5M Valley Navigation
+                        </div>
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <span class="tool-category">Cash Management:</span>
+                                <span class="tool-options"> Float/Profit First</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Quality Management:</span>
+                                <span class="tool-options"> ITIL Tools</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Capacity Planning:</span>
+                                <span class="tool-options"> Resource Guru/Float</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Crisis Management:</span>
+                                <span class="tool-options"> Statuspage.io</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-title">
+                            <span class="phase-number">5</span>
+                            $5M-$10M Scaling
+                        </div>
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <span class="tool-category">Executive Dashboard:</span>
+                                <span class="tool-options"> Domo/Klipfolio</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Board Management:</span>
+                                <span class="tool-options"> BoardEffect/Diligent</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Exit Planning:</span>
+                                <span class="tool-options"> CapIQ/Gust</span>
+                            </li>
+                            <li class="tool-item">
+                                <span class="tool-category">Strategic Planning:</span>
+                                <span class="tool-options"> Workboard/Perdoo</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm text-gray-600">Page 18 of 18</span>
-                    <button onclick="window.location.href='index.html'" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
-                        Back to Start <i class="fas fa-home ml-1"></i>
-                    </button>
+
+                <div class="universal-tools">
+                    <h3>Universal Tools</h3>
+                    <ul class="tool-list">
+                        <li class="tool-item">
+                            <span class="tool-category">Communication:</span>
+                            <span class="tool-options"> Slack/Teams</span>
+                        </li>
+                        <li class="tool-item">
+                            <span class="tool-category">Documentation:</span>
+                            <span class="tool-options"> Notion/Confluence</span>
+                        </li>
+                        <li class="tool-item">
+                            <span class="tool-category">Project Management:</span>
+                            <span class="tool-options"> Asana/Monday.com</span>
+                        </li>
+                        <li class="tool-item">
+                            <span class="tool-category">Password Management:</span>
+                            <span class="tool-options"> 1Password/LastPass</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
 
-    <!-- Header -->
-    <div class="bg-gradient-to-r from-teal-600 to-teal-700 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Resources & Next Steps
-            </h1>
-            <p class="text-lg text-teal-100 max-w-3xl mx-auto">
-                Tools, resources, and support to accelerate your revenue scaling journey
-            </p>
+            <div class="promo-section">
+                <div class="promo-card">
+                    <h3>Companion Google Sheet</h3>
+                    <p>Get the complete calculator with all formulas, dashboards, and automated calculations to track your MSP metrics in real-time.</p>
+                    <ul class="promo-features">
+                        <li>Automated metric calculations</li>
+                        <li>Interactive KPI dashboard</li>
+                        <li>Phase assessment calculator</li>
+                        <li>Cash flow projections</li>
+                        <li>Backward planning tool</li>
+                    </ul>
+                    <a href="https://docs.google.com/spreadsheets/d/1-yZshe8GZY6YZmbaBL3Pjo-rk89vHuKW8qPJpnMOvpw/edit?usp=sharing" class="btn" target="_blank">
+                        <i class="fas fa-table btn-icon"></i> Open Google Sheet
+                    </a>
+                </div>
+
+                <div class="promo-card">
+                    <h3>Free Revenue Leak Audit</h3>
+                    <p>Get personalized guidance on your revenue scaling journey. We'll identify leaks in your current system and provide actionable recommendations.</p>
+                    <ul class="promo-features">
+                        <li>30-minute consultation</li>
+                        <li>Revenue leak assessment</li>
+                        <li>Personalized recommendations</li>
+                        <li>No obligation</li>
+                    </ul>
+                    <a href="https://api.leadconnectorhq.com/widget/booking/ClXrxD7N88Es1RYCdwiT" class="btn" target="_blank">
+                        <i class="fas fa-calendar btn-icon"></i> Book Audit
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Scale Your Revenue?</h2>
+                <p>Don't let another month pass with revenue leaks and missed opportunities. Book your free Revenue Leak Audit today and get personalized guidance for your MSP.</p>
+
+                <div class="cta-grid">
+                    <div class="cta-item">
+                        <h3>30 Minutes</h3>
+                        <p>Free consultation with revenue scaling expert</p>
+                    </div>
+                    <div class="cta-item">
+                        <h3>Leak Assessment</h3>
+                        <p>Identify revenue leaks in your current system</p>
+                    </div>
+                    <div class="cta-item">
+                        <h3>Action Plan</h3>
+                        <p>Personalized roadmap for your growth phase</p>
+                    </div>
+                </div>
+
+                <a href="https://api.leadconnectorhq.com/widget/booking/ClXrxD7N88Es1RYCdwiT" class="btn btn-large" target="_blank">
+                    <i class="fas fa-rocket btn-icon"></i> Book Free Audit
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Start</a>
+            </div>
         </div>
+
+        <footer>
+            <p>© 2025 Minara Creative Marketing</p>
+        </footer>
     </div>
-
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
-        <!-- Tool Stack Examples -->
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                <i class="fas fa-toolbox text-teal-600 mr-3"></i>
-                Recommended Tool Stack by Phase
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Phase 1 Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
-                        Pre-$1M Foundation
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">PSA Lite</span>
-                            <span class="text-xs text-gray-500">Syncro/Autotask</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Time Tracking</span>
-                            <span class="text-xs text-gray-500">Toggl/Harvest</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Basic AR</span>
-                            <span class="text-xs text-gray-500">QuickBooks/Xero</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Documentation</span>
-                            <span class="text-xs text-gray-500">ITGlue/Confluence</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 2 Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
-                        $1M-$3M Systematization
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">CRM</span>
-                            <span class="text-xs text-gray-500">HubSpot/Salesforce</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Proposal Tool</span>
-                            <span class="text-xs text-gray-500">Qwilr/Proposify</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Email Marketing</span>
-                            <span class="text-xs text-gray-500">Mailchimp/ActiveCampaign</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">AM Platform</span>
-                            <span class="text-xs text-gray-500">ChurnZero/ClientSuccess</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 3 Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm mr-3">3</span>
-                        $3M-$5M Infrastructure
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Full PSA</span>
-                            <span class="text-xs text-gray-500">ConnectWise/Autotask</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">AR Automation</span>
-                            <span class="text-xs text-gray-500">Chargify/Chargebee</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Financial Dashboard</span>
-                            <span class="text-xs text-gray-500">Power BI/Tableau</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Integration Platform</span>
-                            <span class="text-xs text-gray-500">Zapier/PieSync</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 4 Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">4</span>
-                        $5M Valley Navigation
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Cash Management</span>
-                            <span class="text-xs text-gray-500">Float/Profit First</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Quality Management</span>
-                            <span class="text-xs text-gray-500">ITIL Tools</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Capacity Planning</span>
-                            <span class="text-xs text-gray-500">Resource Guru/Float</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Crisis Management</span>
-                            <span class="text-xs text-gray-500">Statuspage.io</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 5 Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm mr-3">5</span>
-                        $5M-$10M Scaling
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Executive Dashboard</span>
-                            <span class="text-xs text-gray-500">Domo/Klipfolio</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Board Management</span>
-                            <span class="text-xs text-gray-500">BoardEffect/Diligent</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Exit Planning</span>
-                            <span class="text-xs text-gray-500">CapIQ/Gust</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Strategic Planning</span>
-                            <span class="text-xs text-gray-500">Workboard/Perdoo</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Universal Tools -->
-                <div class="tool-card rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-                        <i class="fas fa-star text-yellow-500 mr-2"></i>
-                        Universal Tools
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Communication</span>
-                            <span class="text-xs text-gray-500">Slack/Teams</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Documentation</span>
-                            <span class="text-xs text-gray-500">Notion/Confluence</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Project Management</span>
-                            <span class="text-xs text-gray-500">Asana/Monday.com</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-700">Password Management</span>
-                            <span class="text-xs text-gray-500">1Password/LastPass</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Companion Resources -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            
-        <!-- Google Sheet Calculator -->
-        <div class="resource-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-calculator text-teal-600 mr-3"></i>
-                Companion Google Sheet
-            </h2>
-            
-            <p class="text-gray-600 mb-6">
-                Get the complete calculator with all formulas, dashboards, and automated calculations 
-                to track your MSP metrics in real-time.
-            </p>
-            
-            <div class="space-y-4 mb-6">
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Automated metric calculations</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Interactive KPI dashboard</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Phase assessment calculator</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Cash flow projections</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Backward planning tool</span>
-                </div>
-            </div>
-            
-            <button onclick="alert('Google Sheet will be available after completing the assessment')" 
-                    class="w-full bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 font-medium">
-                <i class="fab fa-google-drive mr-2"></i>
-                Open Google Sheet
-            </button>
-        </div>
-
-        <!-- Revenue Leak Audit -->
-        <div class="resource-card bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-search-dollar text-teal-600 mr-3"></i>
-                Free Revenue Leak Audit
-            </h2>
-            
-            <p class="text-gray-600 mb-6">
-                Get personalized guidance on your revenue scaling journey. We'll identify leaks in your 
-                current system and provide actionable recommendations.
-            </p>
-            
-            <div class="space-y-4 mb-6">
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">30-minute consultation</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Revenue leak assessment</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">Personalized recommendations</span>
-                </div>
-                <div class="flex items-center text-gray-600">
-                    <i class="fas fa-check text-green-500 mr-3"></i>
-                    <span class="text-sm">No obligation</span>
-                </div>
-            </div>
-            
-            <div class="flex space-x-4">
-                <button onclick="alert('Booking calendar will open in new window')" 
-                        class="flex-1 bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 font-medium">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    Book Audit
-                </button>
-                <div class="qr-placeholder rounded-lg flex items-center justify-center">
-                    <i class="fas fa-qrcode text-4xl text-gray-400"></i>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Additional Resources -->
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                <i class="fas fa-book text-teal-600 mr-3"></i>
-                Additional Resources
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">MSP Benchmarks Report</h3>
-                    <p class="text-gray-600 text-sm mb-3">Industry benchmarks for pricing, margins, and KPIs</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-download mr-1"></i>Download PDF
-                    </button>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">Service Pricing Calculator</h3>
-                    <p class="text-gray-600 text-sm mb-3">Interactive tool for pricing your services profitably</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-external-link-alt mr-1"></i>Open Calculator
-                    </button>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">SOP Templates</h3>
-                    <p class="text-gray-600 text-sm mb-3">Standard operating procedures for common tasks</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-download mr-1"></i>Download Templates
-                    </button>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">Sales Script Library</h3>
-                    <p class="text-gray-600 text-sm mb-3">Proven scripts for discovery calls and closing</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-download mr-1"></i>Download Scripts
-                    </button>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">Financial Model Template</h3>
-                    <p class="text-gray-600 text-sm mb-3">Complete financial modeling spreadsheet</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-external-link-alt mr-1"></i>Open Template
-                    </button>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-teal-300 transition-colors">
-                    <h3 class="font-bold text-gray-800 mb-2">Exit Planning Guide</h3>
-                    <p class="text-gray-600 text-sm mb-3">Step-by-step guide to preparing your MSP for exit</p>
-                    <button class="text-teal-600 text-sm font-medium hover:text-teal-700">
-                        <i class="fas fa-download mr-1"></i>Download Guide
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Final CTA -->
-        <div class="cta-section rounded-xl p-8 text-white text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Ready to Scale Your Revenue?</h2>
-            <p class="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
-                Don't let another month pass with revenue leaks and missed opportunities. 
-                Book your free Revenue Leak Audit today and get personalized guidance for your MSP.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-calendar-check text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">30 Minutes</h3>
-                    <p class="text-teal-100 text-sm">Free consultation with revenue scaling expert</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-search-dollar text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Leak Assessment</h3>
-                    <p class="text-teal-100 text-sm">Identify revenue leaks in your current system</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-rocket text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Action Plan</h3>
-                    <p class="text-teal-100 text-sm">Personalized roadmap for your growth phase</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <button onclick="alert('Booking calendar will open')" 
-                        class="bg-white text-teal-600 py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    Book Free Audit
-                </button>
-                <button onclick="window.location.href='index.html'" 
-                        class="bg-transparent border-2 border-white text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-white hover:text-teal-600 transition-colors">
-                    <i class="fas fa-home mr-2"></i>
-                    Back to Start
-                </button>
-            </div>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Questions? Get in Touch</h2>
-                <p class="text-gray-600 mb-6">
-                    Need help implementing any part of this roadmap? We're here to support your success.
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i class="fas fa-envelope text-teal-600"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-1">Email</h3>
-                        <p class="text-gray-600 text-sm">hello@minaracreative.com</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i class="fas fa-phone text-teal-600"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-1">Phone</h3>
-                        <p class="text-gray-600 text-sm">(555) 123-4567</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i class="fas fa-globe text-teal-600"></i>
-                        </div>
-                        <h3 class="font-medium text-gray-800 mb-1">Website</h3>
-                        <p class="text-gray-600 text-sm">
-                            <a href="https://minaracreativemarketing.com" class="text-teal-600 hover:text-teal-700">
-                                minaracreativemarketing.com
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">
-                © 2024 Minara Creative Marketing | 
-                <a href="https://minaracreativemarketing.com" class="text-teal-400 hover:text-teal-300">minaracreativemarketing.com</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Add interactive functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click handlers for resource buttons
-            document.querySelectorAll('button').forEach(button => {
-                if (button.textContent.includes('Download') || 
-                    button.textContent.includes('Open') || 
-                    button.textContent.includes('Book')) {
-                    button.addEventListener('click', function() {
-                        if (this.textContent.includes('Book')) {
-                            alert('Booking calendar will open in a new window. Choose a time that works for you.');
-                        } else {
-                            alert('This resource will be available after completing the assessment. Check your email for access links.');
-                        }
-                    });
-                }
-            });
-
-            // Add smooth scrolling for better UX
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-        });
-    </script>
-<script>
-    document.addEventListener('keydown', e => {
-        if (e.key === 'ArrowRight' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('go-next', '*');
-        } else if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            window.parent.postMessage('go-prev', '*');
-        }
-    });
-</script>
 </body>
 </html>
